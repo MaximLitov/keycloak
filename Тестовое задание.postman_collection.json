@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "6d6b5e69-c261-4f48-a131-5e0bd0760f14",
+		"name": "Тестовое задание",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38048553"
+	},
+	"item": [
+		{
+			"name": "Авторизация Пациента",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "test-rest-api",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test_patient",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/Test/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"Test",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Авторизация Врача",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "test-rest-api",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test_practitioner",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/Test/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"Test",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка пациентов",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIwZUN4akdHQXd4QmM1dXRUVF9TcDdBUUJaVFRwRndHNnRpQTR1dE1YV0dBIn0.eyJleHAiOjE3MjUzODYzOTEsImlhdCI6MTcyNTM4NjA5MSwianRpIjoiMzQ3ODdmMzAtNDE2Ny00ZWIxLTg2MzEtMjExMjU3M2M1YmFkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9UZXN0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjhjODg2MzhhLTBlNDQtNGQ2Zi05MjUyLWI4NDc4M2ZhZmE5MiIsInR5cCI6IkJlYXJlciIsImF6cCI6InRlc3QtcmVzdC1hcGkiLCJzaWQiOiI5Y2VkOGUyZi05NmUzLTRjMDMtODVhMC03NDU2MmUxOWM3OGYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtdGVzdCIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJ0ZXN0LXJlc3QtYXBpIjp7InJvbGVzIjpbIlBhdGllbnQiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdF9wYXRpZW50In0.Rylue2QSiKJ4ogmbYPli0NsSg2BHjYFYS6wxr_h5yhbEtjLFpaFuKr46YybkAZI0couONQyC-JazyubZ4lULeDKpzBibD_ZBUvYn-pbH7IVfdisDIB-COpRqMKorAiZkrLLV0PU6RqN8qJAGbenStFPYui_ECbnk64SR9BUFpN74cOveyYyUVamCFWGH3UJSww7ZvHvXUI2Ayn9QF2Spjq_JzCYSPTwj1Xkb0lwHT3UkdUOhHTi2ZqQCG6hZYvZAVjTja3zLiQypWhvHwX6e8gJTrl3CKtCdqm9KXGY7lT6g0RuDWfflLk5vDPcOdNx5lW-6WowN1xo8DJhZB0CfpA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/test/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение пациента по ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIwZUN4akdHQXd4QmM1dXRUVF9TcDdBUUJaVFRwRndHNnRpQTR1dE1YV0dBIn0.eyJleHAiOjE3MjUzODYzOTEsImlhdCI6MTcyNTM4NjA5MSwianRpIjoiMzQ3ODdmMzAtNDE2Ny00ZWIxLTg2MzEtMjExMjU3M2M1YmFkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9UZXN0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjhjODg2MzhhLTBlNDQtNGQ2Zi05MjUyLWI4NDc4M2ZhZmE5MiIsInR5cCI6IkJlYXJlciIsImF6cCI6InRlc3QtcmVzdC1hcGkiLCJzaWQiOiI5Y2VkOGUyZi05NmUzLTRjMDMtODVhMC03NDU2MmUxOWM3OGYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtdGVzdCIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJ0ZXN0LXJlc3QtYXBpIjp7InJvbGVzIjpbIlBhdGllbnQiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdF9wYXRpZW50In0.Rylue2QSiKJ4ogmbYPli0NsSg2BHjYFYS6wxr_h5yhbEtjLFpaFuKr46YybkAZI0couONQyC-JazyubZ4lULeDKpzBibD_ZBUvYn-pbH7IVfdisDIB-COpRqMKorAiZkrLLV0PU6RqN8qJAGbenStFPYui_ECbnk64SR9BUFpN74cOveyYyUVamCFWGH3UJSww7ZvHvXUI2Ayn9QF2Spjq_JzCYSPTwj1Xkb0lwHT3UkdUOhHTi2ZqQCG6hZYvZAVjTja3zLiQypWhvHwX6e8gJTrl3CKtCdqm9KXGY7lT6g0RuDWfflLk5vDPcOdNx5lW-6WowN1xo8DJhZB0CfpA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/test/patient/c8f92bc9-0240-4d8b-9479-c0d089746e4a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"patient",
+						"c8f92bc9-0240-4d8b-9479-c0d089746e4a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление пациента",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIwZUN4akdHQXd4QmM1dXRUVF9TcDdBUUJaVFRwRndHNnRpQTR1dE1YV0dBIn0.eyJleHAiOjE3MjUzODYyNzksImlhdCI6MTcyNTM4NTk3OSwianRpIjoiODI0NmY2ZTMtYzE3MC00MDI4LTgxZjYtOTI0OGQyYjdkNDBlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9UZXN0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM0N2RhMGFiLWM5MmQtNGRjYS05OTU5LTBlOWNmZDA4NWI3MyIsInR5cCI6IkJlYXJlciIsImF6cCI6InRlc3QtcmVzdC1hcGkiLCJzaWQiOiI2ZWIwZjEyNy04YmI0LTQwMmEtYTE2Yi02MWI5NzVjYzlhMmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtdGVzdCIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJ0ZXN0LXJlc3QtYXBpIjp7InJvbGVzIjpbIlByYWN0aXRpb25lciJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0X3ByYWN0aXRpb25lciJ9.dPJ1kg6IJr0dNatTF29WR6Dxf2DYaVTTOtyBFgah4h9fyO4eLIhwgJqw7Diw-A6RkstRKcYTM-nUFzZmcwBKOq09bsaR_VId5kGQLP22gQxKe22k5TzOJF4urnVINgEh-J51QUvuGw8AMEYNQSTMEDxYyHiXPSBe6-Z1F2xeqGXd8YgJ3nlImo9foj8S5LwyPpJFKFduAHhLh1dcN1y6NqlBeOIoQLALaxyCYU3ggD-phpTYLUxaX3GhBZgOpgYiz1ga3yAbCDYunK4ObF7-371VrjU6lvGQxh3znhAKjjPKAkXVNAFqmRWbEEOccKwVdvsDzvM4nmsI_RAtQYUW3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Test\",\r\n    \"gender\" : \"male\",\r\n    \"birthDate\" : \"01-10-2000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/test/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование данных",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Test\",\r\n    \"gender\" : \"male\",\r\n    \"birthDate\" : \"01-10-2000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/test/patient/c8f92bc9-0240-4d8b-9479-c0d089746e4a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"patient",
+						"c8f92bc9-0240-4d8b-9479-c0d089746e4a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление данных",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Test\",\r\n    \"gender\" : \"male\",\r\n    \"birthDate\" : \"01-10-2000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/test/patient/c8f92bc9-0240-4d8b-9479-c0d089746e4a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"patient",
+						"c8f92bc9-0240-4d8b-9479-c0d089746e4a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
